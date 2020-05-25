@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#zip files
+*.zip
+
+#apple files
+.DS_Store
