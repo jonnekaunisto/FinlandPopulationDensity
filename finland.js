@@ -70,7 +70,7 @@ var path = d3.geoPath()
 console.log("IIIII")
 
 
-d3.json("topo.json").then(function(topology) {
+d3.json("topo_with_data.json").then(function(topology) {
     console.log(topology)
     svg.append("g")
         .selectAll("path")
