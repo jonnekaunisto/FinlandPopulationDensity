@@ -9,17 +9,33 @@
     <link rel="stylesheet" type="text/css" href="finlandstylesheet.css">
     <!-- D3.js Source -->
     <script type="text/javascript" src="http://d3js.org/d3.v5.min.js"></script>
+
     <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
 </head>
 
 <body>
     <h1 style="text-align:center; color:steelblue">
         <bold> Energy Consumption vs GDP per capita </bold>
     </h1>
-    <!-- Your D3.js code for making a Bar Graph -->
     <script type="text/javascript" src="finland.js"></script>
+
+    <!-- Your D3.js code for making a Bar Graph -->
     <!-- Submission Info -->
     <!--<h4>Created by "Your Name" </h4>-->
+    <div class="slidecontainer">
+        <p id="yearIndicator">Year:</p>
+        <input type="range" min="1990" max="2040" value="2019" class="slider" id="yearSlider">
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-sm-2">
+            <p id="value-simple"></p>
+        </div>
+        <div class="col-sm">
+            <div id="slider-simple"></div>
+        </div>
+    </div>
     <h4>Jonne Kaunisto</h4>
 
 
