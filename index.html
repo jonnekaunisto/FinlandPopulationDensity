@@ -4,7 +4,7 @@
 <head>
     <!-- Meta Tag -->
     <meta charset="utf-8">
-    <title>D3 Scatterplot</title>
+    <title>Finland Population Density</title>
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="finlandstylesheet.css">
     <!-- D3.js Source -->
@@ -16,26 +16,24 @@
 
 <body>
     <h1 style="text-align:center; color:steelblue">
-        <bold> Energy Consumption vs GDP per capita </bold>
+        <bold>Finland Population Density </bold>
     </h1>
     <script type="text/javascript" src="finland.js"></script>
-
-    <!-- Your D3.js code for making a Bar Graph -->
-    <!-- Submission Info -->
-    <!--<h4>Created by "Your Name" </h4>-->
-    <div class="slidecontainer">
-        <p id="yearIndicator">Year:</p>
-        <input type="range" min="1990" max="2040" value="2019" class="slider" id="yearSlider">
-    </div>
-
-    <div class="row align-items-center">
-        <div class="col-sm-2">
-            <p id="value-simple"></p>
+    <p id="yearIndicator">Year: 2019</p>
+    <div class="flex-container" style="flex-direction: row; display: flex">
+        <div>
+            <p style="margin: 7px;">2019</p>
         </div>
-        <div class="col-sm">
-            <div id="slider-simple"></div>
+        <div class="slidecontainer">
+
+            <input type="range" min="2019" max="2040" value="2019" class="slider" id="yearSlider">
+        </div>
+        <div>
+            <p style="margin: 7px;">2040</p>
         </div>
     </div>
+
+
     <h4>Jonne Kaunisto</h4>
 
 
