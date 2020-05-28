@@ -20,26 +20,26 @@ kunta_trans = {
     "Nivala-Haapajärvi": "Nivala-Haapajärvi",
     "Oulunkaari": "Oulunkaari",
     "Kotka-Hamina": "Kotka-Hamina",
-    "Western Saimaa": "MK11 Pohjois-Savo",
+    "Western Saimaa": "Pohjois-Savo",
     "Ekenäs": "Raasepori",
-    "South Eastern Middle": "MK06 Pirkanmaa",
+    "South Eastern Middle": "Pirkanmaa",
     "Åboland-Turunmaa": "Åboland-Turunmaa",
     "Vakka-Suomi": "Vakka-Suomi",
     "Jakobstadsregionen": "Jakobstadsregionen",
     "Kyrönmaa": "Kyrönmaa",
     "South Eastern Bothnia": "South Eastern Bothnia",
-    "North Western Pirkanm": "MK06 Pirkanmaa",
-    "South Eastern Pirkanm": "MK06 Pirkanmaa",
+    "North Western Pirkanm": "Pirkanmaa",
+    "South Eastern Pirkanm": "Pirkanmaa",
     "South Western Pirkanm": "Lounais-Pirkanmaa",
     "Southern Pirkanmaa": "Etelä-Pirkanmaa",
     "Upper Pirkanmaa": "Ylä-Pirkanmaa",
     "Northern Satakunta": "Pohjois-Satakunta",
-    "South Eastern Satakun": "MK04 Satakunta",
+    "South Eastern Satakun": "Satakunta",
     "Härmänmaa": "Kauhava",
     "Järviseutu": "Järviseutu",
     "Kuusiokunnat": "Kuusiokunnat",
     "Northern Seinänaapuri": "Seinäjoki",
-    "South Eastern Bothnia": "MK14 Etelä-Pohjanmaa",
+    "South Eastern Bothnia": "Etelä-Pohjanmaa",
     "Southern Seinänaapuri": "Seinäjoki"
 }
 
@@ -147,6 +147,8 @@ def main():
     pop_data_dict = process_pop_data()
 
     add_data_to_topo("3", pop_data_dict, land_data_dict)
+
+    add_data_to_topo("2", pop_data_dict, land_data_dict)
 
     exit()
 

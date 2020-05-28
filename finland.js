@@ -73,7 +73,7 @@ var path = d3.geoPath()
     .projection(projection);
 
 
-d3.json("topo_with_data.json").then(function(topology) {
+d3.json("finland.json").then(function(topology) {
     console.log(topology)
 
     // set the starting year
@@ -152,9 +152,12 @@ d3.json("topo_with_data.json").then(function(topology) {
 function makeRegions(topology, year, tooltip) {
     var regions = svg.append("g")
         .selectAll("path")
+        //pick the topjson feature
         .data(topojson.feature(topology, topology.objects.gadm36_FIN_3).features)
         .enter().append("path")
+        //set the id to the region
         .attr("id", function(d) { return d.properties.NAME_3.replace(" ", "") })
+        //
         .attr("fill", function(d) { return color(d.properties.pop_data[year] / d.properties.land_data); })
         .attr("d", path)
         .style("stroke", "10px")
