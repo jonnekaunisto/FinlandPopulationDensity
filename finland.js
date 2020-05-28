@@ -15,13 +15,13 @@ var svg = d3.select("body")
 
 //define the domain of the colors for the counties and the key
 var color = d3.scaleThreshold()
-    .domain([1, 4, 15, 30, 60, 120, 140, 240, 480])
+    .domain([1, 4, 15, 30, 60, 120, 240, 480, 800])
     .range(d3.schemeOrRd[9]);
 
 // defines what value goes where, so that how long the key is basically
 // use scaleSqrt because small values would be too close to each other
 var x = d3.scaleSqrt()
-    .domain([0, 480])
+    .domain([0, 800])
     .rangeRound([0, 400]);
 
 // position the group for the key and rotate it 90 degrees to make it vertical
@@ -156,13 +156,13 @@ function makeRegions(topology, year, tooltip) {
         .data(topojson.feature(topology, topology.objects.gadm36_FIN_3).features)
         .enter().append("path")
         //set the id to the region
-        .attr("id", function(d) { return d.properties.NAME_3.replace(" ", "") })
+        .attr("id", function(d) { return d.properties.NAME_3.replace(/ /g, "") })
         //
         .attr("fill", function(d) { return color(d.properties.pop_data[year] / d.properties.land_data); })
         .attr("d", path)
         .style("stroke", "10px")
         .on("mouseover", function(d) {
-            d3.select("#" + d.properties.NAME_3.replace(" ", "")).attr("stroke", "black")
+            d3.select("#" + d.properties.NAME_3.replace(/ /g, "")).attr("stroke", "black")
 
             // set the information in the tooltip
             tooltip.select("#tooltip-region").text(d.properties.NAME_3)
@@ -178,7 +178,7 @@ function makeRegions(topology, year, tooltip) {
                 .attr("opacity", 1)
         })
         .on("mouseout", function(d) {
-            d3.select("#" + d.properties.NAME_3.replace(" ", "")).attr("stroke", "none")
+            d3.select("#" + d.properties.NAME_3.replace(/ /g, "")).attr("stroke", "none")
 
             // make the tooltip go away with transition
             tooltip.transition().duration(350)
