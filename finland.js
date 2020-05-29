@@ -1,9 +1,10 @@
+//Sources
+//For topojson usage: https://bl.ocks.org/mbostock/5562380
+
 //Define Margin
 var margin = { left: 80, right: 80, top: 50, bottom: 50 },
     width = 960 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
-
-
 
 // Define SVG and center it within the margins
 var svg = d3.select("body")
